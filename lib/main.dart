@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:picture_gallery/screens/GalleryGridScreen.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:picture_gallery/redux/reducers/appReducer.dart';
-import 'package:picture_gallery/redux/app_states/appState.dart';
+import 'package:picture_gallery/redux/reducers/AppReducer.dart';
+import 'package:picture_gallery/redux/app_states/AppState.dart';
 import 'package:picture_gallery/screens/ImageDetailsScreen.dart';
 
 void main() {

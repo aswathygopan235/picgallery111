@@ -1,9 +1,9 @@
 class IncrementFavouriteCounter {
-  final int payload;
-  IncrementFavouriteCounter(this.payload);
+  final int numberFavouritedImages;
+  IncrementFavouriteCounter(this.numberFavouritedImages);
 }
 
 class DecrementFavouriteCounter {
-  final int payload;
-  DecrementFavouriteCounter(this.payload);
+  final int numberFavouritedImages;
+  DecrementFavouriteCounter(this.numberFavouritedImages);
 }

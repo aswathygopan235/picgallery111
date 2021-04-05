@@ -5,13 +5,18 @@ class ImageModel {
   final int height;
   final String downloadURL;
   final String imageURL;
-  final bool isFavourited;
-
+  bool isFavourited;
+  final int totalFavouritedNumber;
   ImageModel(
       {this.author,
       this.width,
       this.height,
       this.downloadURL,
       this.imageURL,
-      this.isFavourited});
+      this.isFavourited,
+      this.totalFavouritedNumber});
+
+  void toggleImageLike() {
+    isFavourited = !isFavourited;
+  }
 }

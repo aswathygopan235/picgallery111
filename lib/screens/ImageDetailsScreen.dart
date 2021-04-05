@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:picture_gallery/redux/actions/favouriteCounterActions.dart';
-import 'package:picture_gallery/redux/app_states/appState.dart';
+import 'package:picture_gallery/redux/actions/FavouriteCounterActions.dart';
+import 'package:picture_gallery/redux/app_states/AppState.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:picture_gallery/widgets/ImageTile.dart';
 import 'package:like_button/like_button.dart';
 
-//Clicking on individual images in GalleryGridScreen.drt expands the image and opents it in this page
+//Clicking on individual images in GalleryGridScreen.dart expands the image and opents it in this page
 class ImageDetailsScreen extends StatelessWidget {
   static const String id = 'image_details_screen';
   final Store<AppState> store;
@@ -51,7 +51,30 @@ class ImageDetailsScreen extends StatelessWidget {
                           children: [
                             LikeButton(
                               padding: EdgeInsets.only(left: 20.0, right: 10.0),
-                              likeCount: 7,
+                              likeBuilder: (bool isLiked) {
+                                return Icon(
+                                  Icons.favorite,
+                                  color: isLiked ? Colors.red : Colors.grey,
+                                  size: 30.0,
+                                );
+                              },
+                              likeCount: 0,
+                              countBuilder:
+                                  (int count, bool isLiked, String text) {
+                                var color = isLiked ? Colors.red : Colors.grey;
+                                Widget result;
+                                if (count == 0) {
+                                  result = Text(
+                                    "love",
+                                    style: TextStyle(color: color),
+                                  );
+                                } else
+                                  result = Text(
+                                    text,
+                                    style: TextStyle(color: color),
+                                  );
+                                return result;
+                              },
                             ),
                             Padding(
                               padding:

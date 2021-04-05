@@ -2,9 +2,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:picture_gallery/widgets/ImageGridView.dart';
-import 'package:picture_gallery/redux/app_states/appState.dart';
+import 'package:picture_gallery/redux/app_states/AppState.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
+import 'package:picture_gallery/services/PicsumImage.dart';
 
 class GalleryGridScreen extends StatelessWidget {
   static const String id = 'gallery_grid_screen';
@@ -13,7 +14,9 @@ class GalleryGridScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<AppState, Store<AppState>>(
         converter: (store) => store,
-        // onInit: (_) => print('You can Initiate an API call here if you want'),
+        onInit: (store) => {
+              print('API calls'),
+            },
         builder: (context, store) {
           return Scaffold(
             appBar: AppBar(

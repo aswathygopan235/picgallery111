@@ -23,7 +23,7 @@ class ImageGridView extends StatelessWidget {
             itemBuilder: (context, index) {
               switch (snapshot.connectionState) {
                 case ConnectionState.none:
-                  return Text('Press button to start.');
+                  return Text('No Connection state.');
                 case ConnectionState.active:
                 case ConnectionState.waiting:
                   return Text('Awaiting result...');
@@ -34,8 +34,6 @@ class ImageGridView extends StatelessWidget {
                     imageURL: 'https://picsum.photos/id/$index/3670/2462',
                     imageTag: 'image$index',
                   );
-
-                // You can reach your snapshot.data['url'] in here
               }
               return Text('Unreachable');
               // unreachable
