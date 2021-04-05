@@ -29,7 +29,15 @@ class AppState {
   AppState copyWith({numberFavouritedPics, images}) {
     return AppState(
       numberFavouritedPics: numberFavouritedPics ?? this.numberFavouritedPics,
-      images: numberFavouritedPics ?? this.images,
+      images: images ?? this.images,
+      author: author ?? this.author,
+      height: height ?? this.height,
+      width: width ?? this.width,
+      isFavourited: isFavourited ?? this.isFavourited,
+      imageURL: imageURL ?? this.imageURL,
+      downloadURL: downloadURL ?? this.downloadURL,
+      totalFavouritedNumber:
+          totalFavouritedNumber ?? this.totalFavouritedNumber,
     );
   }
 
@@ -40,6 +48,15 @@ class AppState {
 
 // Initialize AppState
   static AppState initializeState() {
-    return new AppState(numberFavouritedPics: 0, images: []);
+    return new AppState(
+        numberFavouritedPics: 0,
+        images: [],
+        author: 'Author name',
+        height: 50,
+        width: 50,
+        isFavourited: false,
+        imageURL: 'url/to/image',
+        downloadURL: 'url/to/download',
+        totalFavouritedNumber: 0);
   }
 }
