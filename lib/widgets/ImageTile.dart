@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:picture_gallery/screens/ImageDetailsScreen.dart';
 
+//A single image tile
 class ImageTile extends StatelessWidget {
   final String imageURL;
   final String imageTag;
@@ -10,6 +11,7 @@ class ImageTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(18.0),
+      //This expand the individual images to ImageDetailsScreen.dart showing their specific details
       child: GestureDetector(
         behavior: HitTestBehavior.translucent,
         onTap: () {

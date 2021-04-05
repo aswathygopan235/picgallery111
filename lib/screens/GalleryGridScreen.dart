@@ -1,5 +1,6 @@
 //Page which shows all the pictures in their grid format
 import 'package:flutter/material.dart';
+
 import 'package:picture_gallery/widgets/ImageGridView.dart';
 import 'package:picture_gallery/redux/app_states/appState.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -20,7 +21,7 @@ class GalleryGridScreen extends StatelessWidget {
             ),
             body: StoreConnector<AppState, int>(
                 //Fetching the numberFavouritedPics from appState.dart as count
-                converter: (store) => store.state.numberFavouritedPics,
+                converter: (store) => store.state.getNumberFavouritedPics,
                 builder: (context, count) {
                   return SafeArea(
                     child: Column(
@@ -53,7 +54,8 @@ class GalleryGridScreen extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
-                                    child: Text(count.toString()),
+                                    child: Text(count
+                                        .toString()), //Printing the number of favourite pictures here
                                   ),
                                 ],
                               ),
@@ -66,12 +68,13 @@ class GalleryGridScreen extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 20.0),
                               child: SingleChildScrollView(
-                                  child: Container(
-                                height:
-                                    MediaQuery.of(context).size.height * .80,
-                                width: MediaQuery.of(context).size.width * 1,
-                                child: ImageGridView(),
-                              )),
+                                child: Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * .80,
+                                  width: MediaQuery.of(context).size.width * 1,
+                                  child: ImageGridView(),
+                                ),
+                              ),
                             ),
                           ),
                         )

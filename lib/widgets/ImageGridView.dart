@@ -2,6 +2,7 @@ import 'package:picture_gallery/widgets/ImageTile.dart';
 import 'package:flutter/material.dart';
 import 'package:picture_gallery/services/PicsumImage.dart';
 
+//Widget to show the images in grid format
 class ImageGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
