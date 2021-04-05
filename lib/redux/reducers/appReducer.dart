@@ -9,7 +9,7 @@ AppState appReducer(AppState prevState, dynamic action) {
     totalFavouritedNumber: prevState.totalFavouritedNumber,
     author: prevState.author,
     downloadURL: prevState.downloadURL,
-    imageURL: prevState.downloadURL,
+    imageURL: prevState.imageURL,
     height: prevState.height,
     width: prevState.width,
     isFavourited: prevState.isFavourited,
