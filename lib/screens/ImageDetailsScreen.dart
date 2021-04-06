@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:picture_gallery/redux/actions/FavouriteCounterActions.dart';
 import 'package:picture_gallery/redux/app_states/AppState.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
@@ -65,7 +64,7 @@ class ImageDetailsScreen extends StatelessWidget {
                                 Widget result;
                                 if (count == 0) {
                                   result = Text(
-                                    "love",
+                                    'Favourite',
                                     style: TextStyle(color: color),
                                   );
                                 } else

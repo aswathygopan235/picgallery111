@@ -5,7 +5,6 @@ import 'package:picture_gallery/widgets/ImageGridView.dart';
 import 'package:picture_gallery/redux/app_states/AppState.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:picture_gallery/services/PicsumImage.dart';
 
 class GalleryGridScreen extends StatelessWidget {
   static const String id = 'gallery_grid_screen';
@@ -15,7 +14,7 @@ class GalleryGridScreen extends StatelessWidget {
     return StoreConnector<AppState, Store<AppState>>(
         converter: (store) => store,
         onInit: (store) => {
-              print('API calls'),
+              // print('API calls'),
             },
         builder: (context, store) {
           return Scaffold(
@@ -24,7 +23,7 @@ class GalleryGridScreen extends StatelessWidget {
             ),
             body: StoreConnector<AppState, int>(
                 //Fetching the numberFavouritedPics from appState.dart as count
-                converter: (store) => store.state.getNumberFavouritedPics,
+                converter: (store) => store.state.numberFavouritedPics,
                 builder: (context, count) {
                   return SafeArea(
                     child: Column(

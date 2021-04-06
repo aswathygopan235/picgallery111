@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 import 'package:picture_gallery/redux/actions/FavouriteCounterActions.dart';
 
