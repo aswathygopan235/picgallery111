@@ -1,4 +1,3 @@
-import 'package:picture_gallery/models/ImageModelData.dart';
 import 'package:picture_gallery/redux/actions/ImageFetchActions.dart';
 import 'package:picture_gallery/redux/app_states/AppState.dart';
 import 'package:picture_gallery/widgets/ImageTile.dart';
@@ -15,7 +14,7 @@ class ImageGridView extends StatelessWidget {
     return StoreConnector<AppState, Store<AppState>>(
         converter: (store) => store,
         onInit: (store) {
-          store.dispatch(ImageFetchLoading());
+          store.dispatch(ImageFetchLoading(images: store.state.images));
         },
         builder: (context, store) {
           return GridView.builder(
@@ -39,10 +38,11 @@ class ImageGridView extends StatelessWidget {
               //     if (snapshot.hasError)
               //     store.state.
               //       return Text('Error: ${snapshot.error}');
-              // print('Printing store from ImagGridView:');
-              // print(store.state.images.isLoading);
+
+              print('Printing store from ImagGridView:');
+              print(store.state.images.images);
               return ImageTile(
-                imageURL: 'https://picsum.photos/id/10/2500/1667',
+                imageURL: 'https://picsum.photos/id/20/2500/1667',
                 imageTag: 'image$index',
               );
             },

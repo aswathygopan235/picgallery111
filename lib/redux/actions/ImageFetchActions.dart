@@ -1,4 +1,4 @@
-import 'package:picture_gallery/models/ImageModel.dart';
+import 'package:picture_gallery/models/ImageModelData.dart';
 
 class ImageFetchSuccess {
   // final List<ImageModel> images;
@@ -8,11 +8,9 @@ class ImageFetchSuccess {
 class ImageFetchFail {}
 
 class ImageFetchLoading {
-  final List<ImageModel> images;
+  final ImageModelData images;
 
-  ImageFetchLoading({this.images}) {
-    print(this.images);
-  }
+  ImageFetchLoading({this.images});
   // for (int i = 0; i < 10; i++) {
   //   PicsumImage picsumImageObj = PicsumImage();
   //   dynamic myImage = picsumImageObj.getImageData(i);

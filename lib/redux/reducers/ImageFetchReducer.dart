@@ -1,4 +1,3 @@
-import 'package:picture_gallery/redux/app_states/AppState.dart';
 import 'package:picture_gallery/services/PicsumImage.dart';
 import 'package:redux/redux.dart';
 import 'package:picture_gallery/redux/actions/ImageFetchActions.dart';
@@ -21,11 +20,8 @@ dynamic _imageFetchFail(dynamic state, ImageFetchFail action) {
 }
 
 dynamic _imageFetchLoading(dynamic state, ImageFetchLoading action) async {
-  // return CircularProgressIndicator();
-  print('_imageFetchLoading working');
-  print(action);
+  PicsumImage picsumImageObj = PicsumImage();
   for (int i = 0; i < 10; i++) {
-    PicsumImage picsumImageObj = PicsumImage();
     dynamic myImage = await picsumImageObj.getImageData(i);
 
     ImageModel oneImage = ImageModel(
@@ -35,8 +31,10 @@ dynamic _imageFetchLoading(dynamic state, ImageFetchLoading action) async {
         downloadURL: myImage['download_url'],
         isFavourited: false,
         totalFavouritedNumber: 0);
-    ImageModelData().addNewImage(oneImage);
-    // print(ImageModelData().images);
+    action.images.addNewImage(oneImage);
+    // ImageModelData().addNewImage(oneImage);
+
+    // action.images.add(oneImage);
   }
 
   return action.images;

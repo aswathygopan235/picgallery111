@@ -5,7 +5,7 @@ import 'package:redux/redux.dart';
 import 'package:picture_gallery/widgets/ImageTile.dart';
 import 'package:like_button/like_button.dart';
 
-//Clicking on individual images in GalleryGridScreen.dart expands the image and opents it in this page
+//Clicking on individual images in GalleryGridScreen.dart expands the image and opens it in this page
 class ImageDetailsScreen extends StatelessWidget {
   static const String id = 'image_details_screen';
   final Store<AppState> store;
